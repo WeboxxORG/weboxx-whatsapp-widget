@@ -7,6 +7,7 @@ function generateWhatsAppWidget() {
     var urlParams = new URLSearchParams(queryString);
     
     var phoneNumber = urlParams.get('phoneNumber');
+    phoneNumber = phoneNumber.replace(/\s/g, '').replace(/[-()]/g, '');
     var message = urlParams.get('message');
     
     var widgetContainer = document.createElement('div');
